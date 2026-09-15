@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: 'Windows95';
+  src: url('../../public/fonts/w95f.woff2') format('woff2'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes xp-load {
+  from {
+    transform: translateX(-112px);
+  }
+
+  to {
+    transform: translateX(192px);
+  }
+}
+
+
+
+/* ---------- Paneles de cristal reutilizables ---------- */
+.glass-panel {
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 24px rgba(0, 40, 80, 0.25);
+}
+
+/* ---------- Ventana estilo Aero ---------- */
+.window-aero {
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 18px 40px rgba(0, 30, 70, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.window-aero-body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(240, 248, 255, 0.88));
+}
+
+/* Cabecera de ventana: degradado azul glossy con brillo superior */
+.title-bar-aero {
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  background: linear-gradient(180deg, #eaf6ff 0%, #7fd1ff 12%, #2a8fd8 55%, #0d5aa7 100%);
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 30, 70, 0.6);
+}
+
+.title-bar-aero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 55% 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+/* Botones de control de ventana (minimizar/maximizar/cerrar): círculos glossy */
+.aero-control-btn {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(0, 30, 70, 0.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 2px rgba(0, 20, 50, 0.4);
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.aero-control-btn:hover {
+  filter: brightness(1.08);
+}
+
+.aero-control-btn:active {
+  transform: scale(0.92);
+}
+
+.aero-control-minimize {
+  background: linear-gradient(180deg, #e8fff5, #7ee0b8 60%, #3bbf85);
+}
+.aero-control-maximize {
+  background: linear-gradient(180deg, #eaf6ff, #7fd1ff 60%, #2a8fd8);
+}
+.aero-control-close {
+  background: linear-gradient(180deg, #ffecec, #ff8a8a 60%, #e0453f);
+  color: #5a0000;
+}
+
+/* ---------- Botones Aero genéricos (pastilla glossy) ---------- */
+.btn-aero {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 16px;
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #063258;
+  background: linear-gradient(180deg, #ffffff 0%, #cdeeff 45%, #7fd1ff 100%);
+  border: 1px solid rgba(13, 90, 167, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 2px 6px rgba(0, 40, 90, 0.25);
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.btn-aero:hover {
+  filter: brightness(1.06);
+}
+
+.btn-aero:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ---------- Barra de tareas Aero: cristal oscuro translúcido ---------- */
+.taskbar-aero {
+  background: linear-gradient(180deg, rgba(28, 95, 177, 0.55), rgba(32, 106, 196, 0.75));
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 -2px 20px rgba(0, 20, 50, 0.35);
+}
+
+/* Botón "Inicio": orbe glossy verde/azul */
+.start-orb {
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 10px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #04310f;
+  background: linear-gradient(180deg, #f2fff5 0%, #a9f0c4 35%, #3fcf7f 70%, #ff0202 100%);
+  border: 1px solid rgba(10, 90, 40, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 3px 8px rgba(0, 30, 10, 0.35);
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+.start-orb:hover {
+  filter: brightness(1.08);
+}
+.start-orb:active {
+  transform: scale(0.97);
+}
+
+.start-orb-dot {
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #bfffdb 40%, #2ecf72 75%, #0f7d3d 100%);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Chip pequeño de cristal (reloj, pestañas de ventana) */
+.chip-aero {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 20, 50, 0.6);
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chip-aero.active {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ---------- Iconos de escritorio: el icono ES el botón, sin caja ---------- */
+.desktop-icon-btn {
+    font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  background: transparent;
+  border: none;
+  padding: 20px;
+  padding-left: 75px;
+  padding-right: 75px;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.desktop-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.desktop-icon-btn:active {
+  transform: scale(0.96);
+}
+
+.desktop-icon-btn.selected {
+  background: rgba(120, 200, 255, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.desktop-icon-image {
+  filter: drop-shadow(0 3px 4px rgba(0, 20, 50, 0.45));
+}
+
+/* ---------- Textarea "Notepad" con look de cristal ---------- */
+.notepad-textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Windows95", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 12px;
+  color: #0d2b4a;
+}
+
+/* ---------- Scrollbar Aero ---------- */
+.win95-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #7fd1ff transparent;
+}
+.win95-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.win95-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.win95-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #cdeeff, #2a8fd8);
+}
