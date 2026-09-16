@@ -188,10 +188,10 @@ export default function AsciiAssistant() {
     >
       {/* Contenedor de Información */}
       <div className="max-w-[600px] text-right -translate-y-28 translate-x-[150px]">
-        <p className="font-['Windows95'] text-[90px] font-bold text-white [text-shadow:0_0_10px_rgba(255,255,255,0.8),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.2)]">
+        <p className="font-[Windows95] text-[90px] font-bold text-white [text-shadow:0_0_10px_rgba(255,255,255,0.8),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.2)]">
           {profile.name}
         </p>
-        <p className="font-['Windows95'] mt-1 text-[20px] font-semibold uppercase tracking-widest text-white/85 [text-shadow:0_0_10px_rgba(255,255,255,0.8),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.2)]">
+        <p className="font-[Windows95] mt-1 text-[20px] font-semibold uppercase tracking-widest text-white/85 [text-shadow:0_0_10px_rgba(255,255,255,0.8),0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(255,255,255,0.2)]">
           {profile.role}
         </p>
       </div>

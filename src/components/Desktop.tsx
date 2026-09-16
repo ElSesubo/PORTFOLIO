@@ -77,7 +77,7 @@ export default function Desktop() {
           height: "100vh",
           zIndex: -1,
           backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/images/Pixelated_Background.jpg')",
+            "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url('/images/Pixelated_Background.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
