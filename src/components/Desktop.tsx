@@ -85,10 +85,10 @@ export default function Desktop() {
       </div>
 
       {/* Iconos de escritorio */}
-      <div className="absolute left-5 top-2 flex flex-col flex-wrap gap-1">
+      <div className="absolute left-5 top-2 flex flex-col flex-wrap gap-1 select-none">
         <DesktopIcon
           label="Sobre mí"
-          icon={<NotepadIcon size={90} />}
+          icon={<NotepadIcon size={80} />}
           onOpen={() => openApp("about")}
         />
         <DesktopIcon

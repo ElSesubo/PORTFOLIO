@@ -62,7 +62,13 @@ body {
 .title-bar-aero {
   font-family: Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  background: linear-gradient(180deg, #eaf6ff 0%, #7fd1ff 12%, #2a8fd8 55%, #0d5aa7 100%);
+  background: linear-gradient(
+    180deg,
+    #0c59cb 0%,
+    #2371e2 12%,
+    #195bcf 50%,
+    #134eb9 100%
+  );
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 30, 70, 0.6);
 }
@@ -71,7 +77,6 @@ body {
   content: "";
   position: absolute;
   inset: 0 0 55% 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
   pointer-events: none;
 }
 
@@ -278,20 +283,11 @@ body {
   padding: 20px;
   padding-left: 75px;
   padding-right: 75px;
-  transition: background-color 0.15s ease, transform 0.1s ease;
 }
 
-.desktop-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
 
 .desktop-icon-btn:active {
   transform: scale(0.96);
-}
-
-.desktop-icon-btn.selected {
-  background: rgba(120, 200, 255, 0.28);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 .desktop-icon-image {
